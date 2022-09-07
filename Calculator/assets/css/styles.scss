@@ -12,8 +12,8 @@ body {
     font-size: 10px;
     font-family: Arial, Helvetica, sans-serif;
     padding: 50px 0;
-    background-image: linear-gradient(to right, rgba(208, 123, 208, .7), pink, #F9CC9D);
-    background-color: blue;
+    background-image: linear-gradient(to right, rgba(208, 123, 208, .7), pink, #F9CC9D),
+                        linear-gradient(to right, blue, white);
 }
 
 .main {
@@ -37,6 +37,7 @@ body {
     font-size: 6em;
     text-align: end;
     padding: 30px 20px;
+    overflow-x: auto;
 }
 
 #result {

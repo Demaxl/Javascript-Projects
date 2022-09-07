@@ -1,8 +1,50 @@
-function callback(){
-    console.log(this.innerHTML);
+
+var expression = "",
+display = "0",
+result = document.getElementById('result'),
+char;
+
+function callback() {
+    char = this.innerHTML;
+
+    console.log(char);
+    if (char == 'x') {char = '*'};
+
+    if (char == '=') {
+        evaluate()
+    } else if (char == "AC") {
+        expression = "";
+        display = "0";
+        result.innerHTML = display;
+    } else {
+        expression += char;
+
+        display = (display == "0") ? this.innerHTML : display + this.innerHTML 
+        result.innerHTML = display;
+    }
+
+}   
+
+function evaluate() {
+    try {
+        var res = eval(expression);
+        expression = res; display = res;
+        result.innerHTML = display
+        
+
+    } catch (err) {
+        res = err.name
+        result.innerHTML = res
+        expression = "";
+        display = "0";
+
+    }
+
+    
+
 }
 
-function layout() {
+window.onload =  function () {
     const order = ['+', '-', 'x', '/',
                    '7', '8', '9', '=',
                     '4', '5', '6',   
@@ -29,8 +71,7 @@ function layout() {
 
         document.getElementById('button-container').appendChild(b)
     }
+    result.innerHTML = display
 }
 
 
-
-layout()
