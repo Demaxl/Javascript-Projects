@@ -7,7 +7,6 @@ char;
 function callback() {
     char = this.innerHTML;
 
-    console.log(char);
     if (char == 'x') {char = '*'};
 
     if (char == '=') {
@@ -28,8 +27,16 @@ function callback() {
 function evaluate() {
     try {
         var res = eval(expression);
-        expression = res; display = res;
-        result.innerHTML = display
+
+        if (res === Infinity) {
+            res = "Math error";
+            expression = "";
+            display = "0";
+            result.innerHTML = res
+        } else {
+            expression = res; display = res;
+            result.innerHTML = display
+        }
         
 
     } catch (err) {
