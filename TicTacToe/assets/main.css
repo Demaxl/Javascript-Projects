@@ -15,7 +15,7 @@ body {
 }
 
 .box {
-  border: 6px solid #2c3e50;
+  border: 3px solid #2c3e50;
   border-radius: 2px;
   font-family: Helvetica;
   font-weight: bold;
@@ -31,6 +31,10 @@ body {
 
 .playero {
   color: #46C2CB;
+}
+
+.win-box {
+  background-color: black;
 }
 
 h2 {

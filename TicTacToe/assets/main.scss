@@ -20,7 +20,7 @@ body {
 }
 
 .box {
-    border: 6px solid #2c3e50;
+    border: 3px solid #2c3e50;
     border-radius: 2px;
     font-family: Helvetica;
     font-weight: bold;
@@ -36,6 +36,10 @@ body {
 
 .playero {
     color: $o_color
+}
+
+.win-box {
+    background-color: black;
 }
 
 h2 {
