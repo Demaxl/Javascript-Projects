@@ -14,10 +14,10 @@ h1{
     font-weight: 800;
     margin: 15px 0;
 }
-.container{
+.Container {
     display: flex;
 }
-.container .section{
+.Container .section{
     width: 350px;
     margin: 20px 50px;
 }
@@ -68,4 +68,10 @@ h2{
     background : rgb(41, 40, 40);
     font-size: 33px;
     color: orange;
+}
+
+
+
+.show.player i {
+    transform: rotateY(180deg);
 }

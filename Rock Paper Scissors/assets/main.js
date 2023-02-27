@@ -8,6 +8,9 @@ const mod = (n, m) => (n % m + m) % m;
 
 const changeImage = (player, chosen) => $(`.show.${player} i`).attr("class", `fas fa-hand-${chosen}`);
 
+const changeScore = (player) => $(`#${player}Score`).text(function(i, currScore) {
+                                                                return parseInt(currScore) + 1;})
+
 
 // ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 function name_to_num(player) {
@@ -78,7 +81,22 @@ $(document).ready(function () {
     $("button.fas").click(function () {
         var chosen = $(this).attr("id")
         changeImage("player", chosen)
-        compare(name_to_num(chosen));
-        })
-;
+        let result = compare(name_to_num(chosen));
+
+        switch (result) {
+            case 'WIN':
+                $("#demo").text("WIN!").attr('class', 'display-2 text-success')
+                changeScore('player')
+                break
+            case 'LOSE':
+                $("#demo").text("LOSE!").attr('class', 'display-2 text-danger')
+                changeScore('computer')
+                break
+            default:
+                $("#demo").text("TIE!").attr('class', 'display-2 text-warning')
+                break
+        }
+
+
+    })
 });
